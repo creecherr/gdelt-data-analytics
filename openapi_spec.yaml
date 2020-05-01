@@ -1,0 +1,33 @@
+#To view in a friendly format, copy and paste the below information in editor.swagger.io
+openapi: 3.0.0
+info:
+  title: GDELT Data Reporting
+  description: 'Service used to both extract GDELT Data from Google Big Query and related APIs, and it also generated reports based on this data.'
+  version: 1.0.0
+servers:
+  - url: https://bright-calculus-256912.appspot.com
+paths:
+  v1/reports:
+    get:
+      description: Gets dynamic report data that is an aggrigation of both Google Big Query data and data reported from an analytics API.
+      responses:
+        '200':
+          description: PDF is returned
+        '500':
+          description: Internal Server Error
+
+  /v1/trigger:
+    post:
+      description: Triggers the ETL process from Google Big Query to the database
+      responses:
+        '201':
+          description: Data was successfully imported to the Database
+        '500':
+          description: Internal Server Error
+
+  /v1/healthChecks:
+    get:
+      description: Tests that the application is up and running.
+      responses:
+        '200':
+          description: OK response. Used to validate app is successfully deployed.

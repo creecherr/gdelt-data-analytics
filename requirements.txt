@@ -1,6 +1,6 @@
 matplotlib==3.1.1
 pandas==0.25.2
-flask==1.0
+flask==2.3.2
 flask_restful==0.3.6
 flask_script==2.0.6
 flask_migrate==2.1.1
